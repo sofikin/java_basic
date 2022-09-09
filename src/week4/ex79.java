@@ -23,7 +23,7 @@ public class ex79 {
             stats.addNumber(number);
         }
         System.out.println("sum: " + all.sum());
-        System.out.println("Sum: " + even.sum());
-        System.out.println("Sum: " + odd.sum());
+        System.out.println("Sum of even: " + even.sum());
+        System.out.println("Sum of odd: " + odd.sum());
     }
 }
