@@ -1,5 +1,7 @@
 package week6;
 
+import week1.StringUtils;
+
 import java.util.ArrayList;
 
 public class Library {
@@ -22,8 +24,8 @@ public class Library {
         ArrayList<Book> found = new ArrayList<Book>();
 
         for (Book book : this.books) {
-            if(book.publisher().contains(title.trim())) {
-                found.add(book);
+            if(StringUtils.included(book.title(), title)) {
+             found.add(book);
             }
         }
 
@@ -33,7 +35,7 @@ public class Library {
         ArrayList<Book> found = new ArrayList<Book>();
 
         for (Book book : this.books) {
-            if(book.publisher().contains(publisher.trim())) {
+            if(StringUtils.included(book.publisher(), publisher)) {
                 found.add(book);
             }
         }
