@@ -9,6 +9,7 @@ public class ex41 {
         Scanner reader = new Scanner(System.in);
         int drawnNumber = drawNumber();
         int n = 0;
+        int count = 0;
 
         while (true) {
             System.out.println("Guess a number: ");
@@ -18,9 +19,11 @@ public class ex41 {
                 System.out.println("Congratulations, your guess is correct!");
                 break;
             } else if (n < drawnNumber) {
-                System.out.println("The number is greater");
+                count++;
+                System.out.println("The number is greater, guesses made: " + count);
             } else {
-                System.out.println("The number is lesser");
+                count++;
+                System.out.println("The number is lesser, guesses made: " + count);
             }
         }
     }
