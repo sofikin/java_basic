@@ -13,9 +13,15 @@ public class ex39 {
         System.out.println();
     }
 
+    private static void printSquare(int sideSize) {
+        int i = 1;
+        while (i <= sideSize) {
+            printStars(4);
+            i++;
+        }
+    }
+
     public static void main(String[] args) {
-        printStars(5);
-        printStars(3);
-        printStars(9);
+        printSquare(4);
     }
 }
