@@ -29,7 +29,17 @@ public class ex39 {
         }
     }
 
+    private static void printTriangle(int size) {
+        int i = 1;
+        while (i <= size) {
+            printStars(i);
+            i++; if (i > size) {
+                break;
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        printRectangle(17, 3);
+        printTriangle(4);
     }
 }
