@@ -19,9 +19,11 @@ public class ex36 {
             }
             sum += number; // sum = sum + number;
             count++; // count = count + 1;
-            if(number % 2 == 0) {
+            if (number % 2 == 0) {
                 even++;
-            } else { odd++;}
+            } else {
+                odd++;
+            }
         }
         System.out.println("Thank you and see you later!");
         System.out.println("The sum is " + sum);
