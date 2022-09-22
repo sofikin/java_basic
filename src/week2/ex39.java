@@ -21,7 +21,15 @@ public class ex39 {
         }
     }
 
+    private static void printRectangle(int width, int height) {
+        int i = 1;
+        while (i <= width && i <= height) {
+            printStars(width);
+            i++;
+        }
+    }
+
     public static void main(String[] args) {
-        printSquare(4);
+        printRectangle(17, 3);
     }
 }
