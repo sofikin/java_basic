@@ -6,10 +6,12 @@ import java.util.List;
 public class AverageSensor implements Sensor {
     private List<Sensor> sensors;
     private List<Integer> measurements;
+    private List<Integer> readings;
     private boolean isOn;
 
     public AverageSensor() {
         this.sensors = new ArrayList<Sensor>();
+        this.readings = new ArrayList<Integer>();
     }
 
     public void addSensor(Sensor additional) {
@@ -41,23 +43,28 @@ public class AverageSensor implements Sensor {
         }
         this.isOn = false;
     }
-
     @Override
     public int measure() {
-        if (this.isOn()) {
-            this.measurements = new ArrayList<Integer>();
-            for (Sensor sensor : this.sensors) {
+        if(this.isOn()){
+            List<Integer> measurements = new ArrayList<Integer>();
+            for (Sensor sensor:this.sensors) {
                 int measurement = sensor.measure();
-                this.measurements.add(measurement);
+                measurements.add(measurement);
             }
             int sum = 0;
-            for (Integer measurement : this.measurements) {
+            for (Integer measurement:measurements) {
                 sum += measurement;
             }
             int average = sum / measurements.size();
+            this.readings.add(average);
             return average;
         } else {
-            throw new IllegalStateException("Average sensor can only measure if all sensors are on");
+            throw new IllegalStateException("Average sensor can measure if all sensors are on");
         }
     }
+
+    public List<Integer> readings() {
+        return this.readings;
+    }
+
 }
