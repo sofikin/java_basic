@@ -6,13 +6,6 @@ public class ConstantSensor implements Sensor {
     public ConstantSensor(int measuredValue) {
         this.measuredValue = measuredValue;
     }
-
-
-    @Override
-    public int measure() {
-        return this.measuredValue;
-    }
-
     @Override
     public boolean isOn() {
         return true;
@@ -26,6 +19,11 @@ public class ConstantSensor implements Sensor {
     @Override
     public void off() {
 
+    }
+
+    @Override
+    public int measure() {
+        return this.measuredValue;
     }
 
 }
